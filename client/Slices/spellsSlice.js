@@ -1,11 +1,13 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { nanoid } from 'nanoid';
+import { createSlice } from "@reduxjs/toolkit";
+import { nanoid } from "nanoid";
 
 const spellsSlice = createSlice({
-  name: 'spellSlots',
+  name: "spellSlots",
   initialState: [
-    { id: nanoid(), slotOne: { spell: 'empty', used: false } },
-    { id: nanoid(), slotTwo: { spell: 'empty', used: false } },
+    {
+      slot1: { id: nanoid(), spell: "empty", used: false },
+      slot2: { id: nanoid(), spell: "empty", used: false },
+    },
   ],
   reducers: {
     spellAdd(state, action) {
@@ -17,9 +19,9 @@ const spellsSlice = createSlice({
       // const spellSlot = state.find((spell) => spell.id === action.payload);
       // spellSlot.completed = !spellSlot.completed;
     },
-    spellRemove(state, action){
+    spellRemove(state, action) {
       // this will need to empty a spell slot
-    }
+    },
   },
 });
 
