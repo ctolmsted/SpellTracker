@@ -1,21 +1,22 @@
 import { createSlice, current, nanoid } from '@reduxjs/toolkit';
 
+// const initialState = {
+//   slots: [{ id: nanoid(), spell: 'empty', used: false }, { id: nanoid(), spell: 'empty', used: false }],
+//   studiedSpell: '',
+//   resting: false
+// };
 export const spellsSlice = createSlice({
   name: 'spellSlots',
   initialState: {
-    slots: [{ id: nanoid(), spell: 'empty', used: false }, { id: nanoid(), spell: 'empty', used: false }],
+    slots: [{ id: nanoid(), spell: null, used: false }, { id: nanoid(), spell: null, used: false }],
     studiedSpell: '',
-    resting: false,
-    testCount: 0
+    resting: false
   },
   reducers: {
     spellAdd: (state, action) => {
       // this will update the spell property of the first empty slot
-      console.log('We are in spellAdd');
-      console.log(state);
-      console.log(action);
       for (let i = 0; i < state.slots.length; i++) {
-        if (state.slots[i].spell === 'empty') {
+        if (!state.slots[i].spell) {
           state.slots[i].spell = state.studiedSpell;
           state.studiedSpell = '';
           break;
@@ -36,13 +37,7 @@ export const spellsSlice = createSlice({
     },
     spellStudy: (state, action) => {
       // this will update the "studiedSpell" state when the user inputs text
-      console.log('we are now in spellStudy');
-      console.log(current(state));
-      // state.testCount = state.testCount + 1;
-      // console.log(action);
-      // state.studiedSpell = action.payload;
-      // console.log(current(state));
-      return {...state, studiedSpell: action.payload};
+      state.studiedSpell = action.payload;
     },
     longRest: (state, action) => {
       const slots = state.slots;

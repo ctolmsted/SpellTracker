@@ -1,9 +1,13 @@
 import React from 'react';
-
-const Slot = () => {
+import { useSelector } from 'react-redux';
+ 
+const Slot = (props) => {
+  const { id } = props;
+  const { slots } = useSelector((state) => state.spells);
+  const thisSlot = slots.find((el) => el.id === id);
   return (
     <div className="spellSlot">
-      <span>Empty</span>
+      <span>{thisSlot.spell}</span>
       <span>
         <button onClick={() => {}}>Use</button>
       </span>
