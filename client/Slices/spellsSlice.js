@@ -28,12 +28,15 @@ export const spellsSlice = createSlice({
       const slots = state.slots;
       const spellSlot = slots.find((el) => el.id === action.payload);
       spellSlot.used = true;
+      spellSlot.spell += ' SPENT';
     },
     spellRemove: (state, action) => {
       // this will need to empty a spell slot
-      const slots = state.slots;
-      const spellSlot = slots.find((el) => el.id === action.payload);
-      spellSlot.spell = 'empty';
+      if (state.resting){
+        const slots = state.slots;
+        const spellSlot = slots.find((el) => el.id === action.payload);
+        spellSlot.spell = null;
+      }
     },
     spellStudy: (state, action) => {
       // this will update the "studiedSpell" state when the user inputs text
@@ -41,11 +44,14 @@ export const spellsSlice = createSlice({
     },
     longRest: (state, action) => {
       const slots = state.slots;
-      slots.forEach((el) => {el.used = false;});
+      slots.forEach((el) => {
+        el.used = false;
+        el.spell = el.spell.replace(' SPENT','');
+      });
     },
     restAndPrepare: (state, action) => {
       state.resting = true;
-    }
+    } 
   },
 });
 

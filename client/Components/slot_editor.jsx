@@ -1,6 +1,6 @@
 import React from 'react';
 import { spellStudy, spellAdd } from '../Slices/spellsSlice.js';
-import { useSelector, useDispatch } from 'react-redux'; 
+import { useDispatch } from 'react-redux'; 
 
 const SlotEditor = () => {
   const dispatch = useDispatch();
@@ -15,7 +15,11 @@ const SlotEditor = () => {
       ></input>
       <button
         type="submit"
-        onClick={() => {dispatch(spellAdd({}));}}
+        onClick={() => {
+          dispatch(spellAdd({}));
+          const spellInput = document.getElementById('spellInput');
+          spellInput.value = '';
+        }}
       >
           Study Spell
       </button>
