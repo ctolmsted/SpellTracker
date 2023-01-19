@@ -1,20 +1,10 @@
-import { configureStore } from "@reduxjs/toolkit";
-import spellsReducer from "./Slices/spellsSlice";
-import { nanoid } from "nanoid";
-
-const reducer = {
-  spells: spellsReducer,
-};
-
-const preloadedState = {
-  slots: [{ id: nanoid(), spell: "empty", used: false }],
-  studiedSpell: "Hello",
-};
+import { configureStore } from '@reduxjs/toolkit';
+import spellsReducer from './Slices/spellsSlice';
 
 const store = configureStore({
-  reducer,
-  // preloadedState,
-  
+  reducer: {
+    spells: spellsReducer,
+  },
 });
 
 export default store;

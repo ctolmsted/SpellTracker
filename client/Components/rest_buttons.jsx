@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const RestButtons = () => {
   return (
@@ -16,7 +16,7 @@ const RestButtons = () => {
           type="submit"
           onClick={() => {}} 
         >
-          Rest & Study
+          Rest & Prepare
         </button>
       </span>
     </div>

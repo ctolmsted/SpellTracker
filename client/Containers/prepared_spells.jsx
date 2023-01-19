@@ -1,23 +1,23 @@
-import React, { Component } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import Slots from "../Components/spell_slots.jsx";
-import SlotEditor from "../Components/slot_editor.jsx";
-import RestButtons from "../Components/rest_buttons.jsx";
-import { spellAdd, spellToggle, spellRemove } from "../Slices/spellsSlice.js";
+import React, { Component } from 'react';
+// import { useSelector, useDispatch } from 'react-redux';
+import Slots from '../Components/spell_slots.jsx';
+import SlotEditor from '../Components/slot_editor.jsx';
+import RestButtons from '../Components/rest_buttons.jsx';
+// import { spellAdd, spellToggle, spellRemove } from '../Slices/spellsSlice.js';
 
 const PreparedSpells = () => {
   return (
     <div id="preparedSpells">
       <h1>Prepared Spells</h1>
-      <p>
+      <div>
         <Slots />
-      </p>
-      <p>
+      </div>
+      <div>
         <SlotEditor />
-      </p>
-      <p>
+      </div>
+      <div>
         <RestButtons />
-      </p>
+      </div>
     </div>
   );
 };

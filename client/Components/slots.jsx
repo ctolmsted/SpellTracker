@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const Slot = () => {
   return (
@@ -6,6 +6,9 @@ const Slot = () => {
       <span>Empty</span>
       <span>
         <button onClick={() => {}}>Use</button>
+      </span>
+      <span>
+        <button onClick={() => {}}>Clear Slot</button>
       </span>
     </div>
   );
