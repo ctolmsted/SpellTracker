@@ -1,8 +1,6 @@
 import React from "react";
 
-const RestButtons = (
-  // props will go here
-) => {
+const RestButtons = () => {
   return (
     <div id="restButtons">
       <span>

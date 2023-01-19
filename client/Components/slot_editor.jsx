@@ -5,7 +5,7 @@ const SlotEditor = (
 ) => {
   return (
     <div id="slotEditor">
-      <input type="text" id="spellInput" value="Enter a Spell from your Spellbook" onChange={() => {
+      <input type="text" id="spellInput" placeholder="Enter a Spell from your Spellbook" onChange={() => {
         // props.setLocation(e.target.value);
       }}></input>
       <button

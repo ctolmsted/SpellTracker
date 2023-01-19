@@ -3,12 +3,10 @@ import { nanoid } from "nanoid";
 
 const spellsSlice = createSlice({
   name: "spellSlots",
-  initialState: [
-    {
-      slot1: { id: nanoid(), spell: "empty", used: false },
-      slot2: { id: nanoid(), spell: "empty", used: false },
-    },
-  ],
+  initialState: {
+    slots: [{ id: nanoid(), spell: "empty", used: false }, { id: nanoid(), spell: "empty", used: false }],
+    studiedSpell: "Hello"
+  },
   reducers: {
     spellAdd(state, action) {
       // this will need to update the spell property of an empty slot

@@ -1,11 +1,9 @@
 import React from "react";
 
-const Slot = (
-  // props will go here
-) => {
+const Slot = () => {
   return (
     <div className="spellSlot">
-      <span>Test</span>
+      <span>Empty</span>
       <span>
         <button onClick={() => {}}>Use</button>
       </span>
