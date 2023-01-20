@@ -27,8 +27,10 @@ export const spellsSlice = createSlice({
       // this will set the use status of the spell on which it is clicked to true
       const slots = state.slots;
       const spellSlot = slots.find((el) => el.id === action.payload);
-      spellSlot.used = true;
-      spellSlot.spell += ' SPENT';
+      if (!spellSlot.used){
+        spellSlot.used = true;
+        spellSlot.spell += ' SPENT';
+      }
     },
     spellRemove: (state, action) => {
       // this will need to empty a spell slot
@@ -45,8 +47,10 @@ export const spellsSlice = createSlice({
     longRest: (state, action) => {
       const slots = state.slots;
       slots.forEach((el) => {
-        el.used = false;
-        el.spell = el.spell.replace(' SPENT','');
+        if (el.spell){
+          el.used = false;
+          el.spell = el.spell.replace(' SPENT','');
+        }
       });
     },
     restAndPrepare: (state, action) => {

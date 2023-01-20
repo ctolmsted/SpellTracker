@@ -1,6 +1,6 @@
-import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { spellUse, spellRemove } from "../Slices/spellsSlice.js";
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { spellUse, spellRemove } from '../Slices/spellsSlice.js';
 
 const Slot = (props) => {
   const dispatch = useDispatch();
@@ -9,9 +9,11 @@ const Slot = (props) => {
   const thisSlot = slots.find((el) => el.id === id);
   return (
     <div className="spellSlot">
-      <span>{thisSlot.spell}</span>
+      <span className="border w-50 testclass">{thisSlot.spell}</span>
       <span>
         <button
+          className="btn btn-primary"
+          data-bs-toggle="button"
           onClick={() => {
             dispatch(spellUse(id));
           }}
@@ -21,6 +23,7 @@ const Slot = (props) => {
       </span>
       <span>
         <button
+          className="btn btn-warning"
           onClick={() => {
             dispatch(spellRemove(id));
           }}

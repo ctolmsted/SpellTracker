@@ -12,9 +12,11 @@ const PreparedSpells = () => {
       <div>
         <Slots />
       </div>
+      <hr/>
       <div>
         <SlotEditor />
       </div>
+      <hr/>
       <div>
         <RestButtons />
       </div>

@@ -5,9 +5,10 @@ import { longRest, restAndPrepare } from '../Slices/spellsSlice.js';
 const RestButtons = () => {
   const dispatch = useDispatch();
   return (
-    <div id="restButtons">
-      <span>
+    <div className='row' id="restButtons">
+      <span className='col w-100 p-3'>
         <button
+          className="btn btn-success"
           id="longRestButton"
           type="submit"
           onClick={() => {dispatch(longRest());}} 
@@ -15,11 +16,12 @@ const RestButtons = () => {
           Long Rest
         </button>
       </span>
-      <span>
+      <span className='col w-100 p-3'>
         <button
+          className="btn btn-outline-success"
           id="restPrepareButton"
           type="submit"
-          onClick={() => {dispatch(restAndPrepare())}} 
+          onClick={() => {dispatch(restAndPrepare());}} 
         >
           Rest & Prepare
         </button>

@@ -8,10 +8,16 @@ class App extends Component {
   }
 
   render() {
-    return(
-      <div id="main">
-        <Spellbook />
-        <PreparedSpells />
+    return (
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col">
+            <Spellbook />
+          </div>
+          <div className="col">
+            <PreparedSpells />
+          </div>
+        </div>
       </div>
     );
   }

@@ -6,14 +6,16 @@ const SlotEditor = () => {
   const dispatch = useDispatch();
   // const { studiedSpell } = useSelector(state => state);
   return (
-    <div id="slotEditor">
+    <div className='row' id="slotEditor">
       <input
+        className='col'
         type="text"
         id="spellInput"
         placeholder="Enter a Spell from your Spellbook"
         onChange={(e) => {dispatch(spellStudy(e.target.value));}}
       ></input>
       <button
+        className='col-xs btn btn-success'
         type="submit"
         onClick={() => {
           dispatch(spellAdd({}));

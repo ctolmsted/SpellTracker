@@ -1,7 +1,7 @@
 import React from 'react';
 
 const spellbook = () => (
-  <div id="spellbook">
+  <div className="col" id="spellbook">
     <h1>Your Spellbook</h1>
     <hr/>
     <ol>
