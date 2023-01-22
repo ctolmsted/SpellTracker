@@ -21,5 +21,3 @@ const SlotList = () => {
 };
 
 export default SlotList;
-
-
